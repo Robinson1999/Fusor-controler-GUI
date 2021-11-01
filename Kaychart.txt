@@ -1,0 +1,38 @@
+private void CHART()
+        {
+            while (threadsActive==true)
+            {
+                testArray[testArray.Length - 1] = randomNumber;
+
+                Array.Copy(testArray, 1, testArray, 0, testArray.Length - 1);
+
+
+                //start function to update the chart
+                //dont know what it exaclty does but without invoking it crashes
+                if (chart1.IsHandleCreated)
+                {
+                    this.Invoke((MethodInvoker)delegate { UpdateChart(); });
+                }
+                else
+                {
+                    //should never go here but incase something weird hapens i gues
+                    Console.WriteLine("ERROR : failure when trying to update chart");
+                }
+
+
+                Thread.Sleep(100);
+
+
+
+            }
+        }
+
+        private void UpdateChart()
+        {
+            chart1.Series["Series1"].Points.Clear();
+
+            for (int i = 0; i < testArray.Length - 1; ++i)
+            {
+                chart1.Series["Series1"].Points.AddY(testArray[i]);
+            }
+        }

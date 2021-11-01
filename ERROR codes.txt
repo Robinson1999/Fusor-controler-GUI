@@ -1,0 +1,20 @@
+0=No voltage at any adc pin
+{
+1=+5V2 outside parameters
+2=+12V outside parameters
+3=Oil temp outside parameters / or calculated resistance = 0
+4=Voltage rms outside parameters
+5=Current rms outside parameters
+
+6=Voltage but no current
+7=Current but no voltage
+
+8=HV voltage drop / Posible High voltage arc
+}
+
+9=SA pin state low
+
+10=WA pin state high
+
+11=Check loop speed low
+12=Comunication loop speed low
